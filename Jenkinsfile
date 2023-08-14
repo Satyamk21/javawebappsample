@@ -22,9 +22,8 @@ node {
       def resourceGroup = 'Jenkins'
       def webAppName = 'Jenkins-app'
       // login Azure
-      withCredentials([usernamePassword(credentialsId: 'AzureServicePrincipal', passwordVariable: 'IRG8Q~jUnotkeh6uZ9X7F.zovt_VqW9_I7XJ6b.P', usernameVariable: '7f97506a-d348-431a-9b94-21ea8061f9ef')]) {
+      withCredentials([usernamePassword(credentialsId: 'AzureServicePrincipal', passwordVariable: 'IRG8Q~jUnotkeh6uZ9X7F.zovt_VqW9_I7XJ6b.P', usernameVariable: 'cb49ace2-c087-4fcc-890e-eb18782c8bc4')]) {
        sh '''
-          curl -sL https://aka.ms/InstallAzureCLIDeb
           az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
           az account set -s $AZURE_SUBSCRIPTION_ID
         '''
